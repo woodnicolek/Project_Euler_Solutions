@@ -1,0 +1,49 @@
+# Project Euler - Problem 001: Multiples of 3 and 5
+#
+# If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
+# The sum of these multiples is 23.
+#
+# Find the sum of all the multiples of 3 or 5 below 1000.
+
+
+# METHOD 1 - Check through all numbers 1-1000 for multiples of 3 or 5 and add to the sum.
+sum_01 = 0
+
+for i in range(0,1000):
+    if i%3 == 0:
+        sum_01 = sum_01 + i
+    elif i%5 == 0:
+        sum_01 = sum_01 + i
+    else:
+        pass
+
+print(sum_01)
+
+
+# METHOD 2 - Generate lists of all multiples of 3 and 5 up to 1000, subtracting duplicates with the list of multiples of 15, then summing the lists.
+multiples_three = list(range(0,1000,3))
+
+multiples_five = list(range(0,1000,5))
+
+multiples_fifteen = list(range(0,1000,15))
+
+sum_02 = sum(multiples_three) + sum(multiples_five) - sum(multiples_fifteen)
+
+print(sum_02)
+
+
+# METHOD 3 - Initialize a list, fill with multiples of 3 or 5, while avoiding duplicates, then sum the contents of the list.
+numbers = []
+
+for i in range(0,334,1):  
+    numbers = numbers + [3*i]
+
+for i in range(0,200,1):
+    if 5*i in numbers:
+        pass
+    else:
+        numbers = numbers + [5*i]
+
+sum_03 = sum(numbers)
+
+print(sum_03)
