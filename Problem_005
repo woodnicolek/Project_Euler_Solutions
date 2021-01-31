@@ -1,0 +1,48 @@
+# Project Euler - Problem 005: Smallest Multiple
+#
+# 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+#
+# What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+# Solution: 232792560
+
+
+prime_factors_number = []
+prime_factors_total = []
+
+for number in range(2,21,1):
+    i = 2
+    while i <= number:
+        if number % i == 0:
+            prime_factors_number = prime_factors_number + [i]
+
+            quotient = number / i
+            number = quotient
+        else:
+            i += 1
+
+    k = 0
+    for j in range(0, len(prime_factors_number), 1):
+        while k < len(prime_factors_total):
+            if prime_factors_number[j] == prime_factors_total[k]:
+                k += 1
+                break
+            else:
+                k += 1
+
+        if k == len(prime_factors_total):
+            prime_factors_total = prime_factors_total + [prime_factors_number[j]]
+        else:
+            pass
+        
+    prime_factors_number = []
+
+
+def multiply_list(my_list):
+    product = 1
+    for x in my_list:
+        product = product * x
+    return product
+
+
+result = multiply_list(prime_factors_total)
+print(result)
