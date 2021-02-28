@@ -6,8 +6,8 @@
 # Solution: 6857
 
 
-# METHOD 1
-# Method 1 gives the correct answer but is slow and inefficient because it runs through all the numbers twice.
+# SOLUTION 1
+# Solution 1 gives the correct answer but is slow and inefficient because it runs through all the numbers twice.
 prime_factors = []
 x = 600851475143
 
@@ -33,7 +33,7 @@ largest_prime_factor = max(prime_factors)
 print(largest_prime_factor)
 
 
-# METHOD 2
+# SOLUTION 2
 number = 600851475143
 j = 2
 
