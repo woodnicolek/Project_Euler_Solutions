@@ -7,7 +7,7 @@
 # Solution: 233168
 
 
-# METHOD 1 - Check through all numbers 1-1000 for multiples of 3 or 5 and add to the sum.
+# SOLUTION 1 - Check through all numbers 1-1000 for multiples of 3 or 5 and add to the sum.
 sum_01 = 0
 
 for i in range(0,1000):
@@ -21,7 +21,7 @@ for i in range(0,1000):
 print(sum_01)
 
 
-# METHOD 2 - Generate lists of all multiples of 3 and 5 up to 1000, subtract duplicates with the list of multiples of 15, then sum the lists.
+# SOLUTION 2 - Generate lists of all multiples of 3 and 5 up to 1000, subtract duplicates with the list of multiples of 15, then sum the lists.
 multiples_three = list(range(0,1000,3))
 
 multiples_five = list(range(0,1000,5))
@@ -33,7 +33,7 @@ sum_02 = sum(multiples_three) + sum(multiples_five) - sum(multiples_fifteen)
 print(sum_02)
 
 
-# METHOD 3 - Initialize an empty list, fill with multiples of 3 or 5, while avoiding duplicates, then sum the contents of the list.
+# SOLUTION 3 - Initialize an empty list, fill with multiples of 3 or 5, while avoiding duplicates, then sum the contents of the list.
 numbers = []
 
 for i in range(0,334,1):  
